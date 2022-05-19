@@ -1,0 +1,359 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+    font-family: 'Inter';
+    font-weight: 400;
+}
+
+body {
+    padding: 40px 40px 0 40px;
+    background: #F3F5FC;
+}
+.header {
+    display: flex;
+}
+
+.header img {
+    margin-right: 280px;
+}
+
+.header h1 {
+    color: #0A3871;
+    margin: 0;
+}
+
+.footer_hr {
+    max-width: 1400px;
+    margin: 15px auto 0;
+    border-radius: 50%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px auto 0;
+    color: #7a7e81;
+    font-size: 16px;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+/* Overflow Bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px 5px transparent;
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #606060;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #909090;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+/* Overflow Bar */
+
+/* Responsive */
+.main_container{
+    margin-top: 25px;
+}
+.start-add-container{
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+button {
+    padding-top: 21px;
+    padding-bottom: 21px;
+    width: 332px;
+    font-size: 18px;
+    line-height: 19px;
+    border-radius: 20px;
+    border: 1px solid #0A3871;
+    cursor: pointer;
+}
+#startGame{
+    color: #FFF;
+    background: #0A3871;
+    transition: 0.5s background;
+    transition: 0.1s box-shadow;
+    padding: 40px;
+}
+#startGame:hover{
+    background: #0a3871f1;
+    box-shadow: 0 0 5px 1px #0a3871e1;
+}
+#addWord{
+    color: #0A3871;
+    background: #fff !important;
+    transition: 0.1s box-shadow;
+}
+#addWord:hover{
+    box-shadow: 0 0 5px 1px #0A3871;
+}
+#resultBox{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#textBox {
+    height: 300px;
+    width: 700px;
+    max-width: auto;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    color: #0A3871;
+    border: none;
+    outline: none;
+    resize: none;
+    flex-grow: 1;
+    background: transparent;
+    border: .5px solid #d3d3d34d;
+}
+.warning_container {
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#save{
+    color: #FFF;
+    background: #0A3871;
+    transition: 0.5s background;
+    transition: 0.1s box-shadow;
+}
+#save:hover{
+    background: #0a3871f1;
+    box-shadow: 0 0 5px 1px #0a3871e1;
+   
+}
+#cancel{
+    color: #0A3871;
+    background: #fff !important;
+    transition: 0.1s box-shadow;
+}
+#cancel:hover{
+    box-shadow: 0 0 5px 1px #0A3871;
+}
+#game{
+    display: none;
+    align-items: center;
+    margin-left: 80px;
+}
+.newGame{
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    color: #FFF;
+    background: #0A3871;
+    transition: 0.5s background;
+    transition: 0.1s box-shadow;
+}
+.newGame:hover{
+    background: #0a3871f1;
+    box-shadow: 0 0 5px 1px #0a3871e1;
+}
+.exit{
+    max-width: auto;
+    color: #0A3871;
+    background: #fff !important;
+    transition: 0.1s box-shadow;
+}
+.exit:hover{
+    box-shadow: 0 0 5px 1px #0A3871;
+}
+#palabra_a_adivinar{
+    
+    display: flex;
+    align-items: flex-end;
+    height: 3em;
+}
+#palabra_a_adivinar span{
+    margin-left: 6px;
+    vertical-align: bottom;
+    font-size: 2em;
+    border-bottom: 2px solid #0A3871;
+    width: 30px;
+    text-align: center;
+    margin-right: 6px;
+    display: inline-block;/* sin esto, por ser un elemto de linia, no tomaria el width*/
+}
+#letras{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+#letras button{
+    width: 28px;
+    padding: 6px 0;
+    text-align: center;
+}
+#imagen{
+    align-items: center;
+    height: 300px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1490px) {
+    .main_container {
+        margin-top: 50px;
+        width: 600px;
+    }
+
+    .header img {
+        margin-right: 170px;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .main_container {
+        width: 450px;
+    }
+
+    .header img {
+        margin-right: 80px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .header img {
+        margin-right: 0;
+    }
+
+    .header h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main_container {
+        margin-top: 40px;
+        width: 700px;
+    }
+
+    .result_box {
+        width: 700px;
+        min-height: auto;
+    }
+
+    .result_box p {
+        margin: 0;
+    }
+
+    .img_not_found {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main_container {
+        width: 550px;
+    }
+
+    .result_box {
+        width: 550px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .header h1 {
+        display: none;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_container {
+        width: 310px;
+    }
+
+    .encrypt_decrypt_buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .result_box {
+        width: 310px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .encrypt_decrypt_buttons {
+        align-items: center;
+    }
+
+    #encryptButton,
+    #decryptButton {
+        width: 280px;
+    }
+
+    #textBox {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    #results {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
