@@ -25,11 +25,6 @@ body {
     margin-right: 280px;
 }
 
-.header h1 {
-    color: #0A3871;
-    margin: 0;
-}
-
 .footer_hr {
     max-width: 1400px;
     margin: 15px auto 0;
@@ -80,9 +75,6 @@ footer {
     background-clip: content-box;
 }
 
-/* Overflow Bar */
-
-/* Responsive */
 .main_container{
     margin-top: 25px;
 }
@@ -92,7 +84,6 @@ footer {
     gap: 30px;
     margin-top: 15px;
     margin-bottom: 30px;
-    align-items: center;
 }
 button {
     padding-top: 21px;
@@ -103,6 +94,7 @@ button {
     border-radius: 20px;
     border: 1px solid #0A3871;
     cursor: pointer;
+    margin: 6px;
 }
 #startGame{
     color: #FFF;
@@ -110,6 +102,8 @@ button {
     transition: 0.5s background;
     transition: 0.1s box-shadow;
     padding: 40px;
+    margin-left: auto;
+    margin-left: auto;
 }
 #startGame:hover{
     background: #0a3871f1;
@@ -119,22 +113,28 @@ button {
     color: #0A3871;
     background: #fff !important;
     transition: 0.1s box-shadow;
+    margin-left: auto;
+    margin-left: auto;
 }
 #addWord:hover{
     box-shadow: 0 0 5px 1px #0A3871;
+}
+
+#notFound{
+    display: none;
 }
 #resultBox{
     display: none;
     flex-direction: column;
     align-items: center;
     width: 800px;
-    margin-top: 120px;
+    margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
 }
 #textBox {
-    height: 300px;
-    width: 700px;
+    height: 100px;
+    width: 600px;
     max-width: auto;
     font-size: 32px;
     line-height: 48px;
@@ -178,7 +178,10 @@ button {
 #game{
     display: none;
     align-items: center;
-    margin-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    
 }
 .newGame{
     text-align: center;
@@ -232,6 +235,8 @@ button {
 #imagen{
     align-items: center;
     height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Responsive */
@@ -276,18 +281,13 @@ button {
         width: 700px;
     }
 
-    .result_box {
+    #resultBox {
         width: 700px;
         min-height: auto;
     }
 
-    .result_box p {
+    #resultBox p {
         margin: 0;
-    }
-
-    .img_not_found {
-        display: none;
-        visibility: hidden;
     }
 }
 
@@ -300,7 +300,7 @@ button {
         width: 550px;
     }
 
-    .result_box {
+    #resultBox {
         width: 550px;
         height: auto;
         margin-left: auto;
@@ -324,29 +324,15 @@ button {
 
     .main_container {
         width: 310px;
+        align-items: center;
     }
 
-    .encrypt_decrypt_buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .result_box {
+    #resultBox {
         width: 310px;
         height: auto;
         margin-left: auto;
         margin-right: auto;
     }
-
-    .encrypt_decrypt_buttons {
-        align-items: center;
-    }
-
-    #encryptButton,
-    #decryptButton {
-        width: 280px;
-    }
-
     #textBox {
         font-size: 20px;
         line-height: 28px;

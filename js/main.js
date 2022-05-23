@@ -1,3 +1,4 @@
+
 // Obtener año actual.
 const actualYear = new Date().getFullYear();
 // Asignar año actual al footer.
@@ -56,7 +57,7 @@ function id(str){
     return document.getElementById(str);
 }
 
-const palabras = Array("Gordo", "Piloto", "Decaer", "Avion", "Muchos", "Caramelo", "Mielada", "Azucar", "Psicopata", "Hijo", "Eclosionar", "Boligrafo", "Gatito", "Gerente", "Banquete", "Cumpleaños", "Alarma", "Palido", "Camas", "Complejo");
+var palabras = Array("GORDO", "PILOTO", "DECAER", "AVION", "MUCHOS", "CARAMELO", "MIELADA", "AZUCAR", "HIJO", "ECLOSION", "GATITO", "GERENTE", "BANQUETE", "ALARMA", "PALIDO", "CAMAS", "COMPLEJO");
 
 
 
@@ -81,21 +82,32 @@ function iniciar(event){
         parrafo.appendChild(span);
     }
 
+
 }
 //click de adivinar letra
 for( let i = 0; i < btn_letras.length ; i++ ){
     btn_letras[i].addEventListener( 'click', click_letras );
 }
+
+
 function click_letras(event){
-    const spans = document.querySelectorAll('#palabra_a_adivinar span')
+    const spans = document.querySelectorAll('#palabra_a_adivinar span');
     const button = event.target; //cuál de las letras, llamó a la función.
     button.disabled = true;
-    const letra = button.innerHTML.toLowerCase();
-    const palabra = palabraOc.toLowerCase();
+    const letra = button.innerHTML.toUpperCase();
+    const palabra = palabraOc.toUpperCase();
+
+    for(let i = 0; i < palabra.length; i++){
+        if( letra != palabra[i]){
+               id('erroneas').innerHTML = letra;
+            }
+        }
+
 
     let acerto = false;
+
     for(let i = 0; i < palabra.length; i++){
-        if( letra == palabra[i]){
+     if( letra == palabra[i]){
             spans[i].innerHTML = letra;
             aciertos++;
             acerto = true;
@@ -107,6 +119,7 @@ function click_letras(event){
         const imagen = id('imagen');
         imagen.src = source;
 
+
     }
     if(errores == 7){
         id('resultado').innerHTML = "Perdiste, la palabra correcta era: " + palabraOc;
@@ -117,6 +130,11 @@ function click_letras(event){
     }
     console.log("la letra " + letra + " en la palabra " + palabra + "existe? " + acerto);
 }
+
+//letras usadas
+
+const letrasUsadas = document.getElementById('usadas');
+
 //fin del juego
 function game_over(){
     for( let i = 0; i < btn_letras.length ; i++ ){
@@ -124,3 +142,44 @@ function game_over(){
         
     }
 }
+
+//letra incorrecta
+
+
+//agregar palabra
+const botonGuardar = document.getElementById('save');
+const textAreaNuevaPalabra = document.getElementById('textBox');
+
+botonGuardar.addEventListener('click', ()  => {
+    if(/^([0-9!¡()´¨:;,.""#$%&''*+/=?^_``{|}~-])*$/.test(textAreaNuevaPalabra.value) === true){
+        alert('Solo se admiten letras');
+    }else if(textAreaNuevaPalabra.value.length === 0){
+        alert('Debe ingresar una palabra');
+    }else if(textAreaNuevaPalabra.value.length >8){
+        alert('La palabra debe tener un máximo de 8 letras');
+    }else{
+        palabras.push(textAreaNuevaPalabra.value.trim().toUpperCase());
+        //alert('La palabra se agregó con éxito');
+        Swal.fire({
+            title: '¡Buen trabajo!',
+            text: 'Has agregado tu palabra correctamente',
+            icon: 'success',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+            
+          })
+        
+        game();
+
+
+    }
+});
+

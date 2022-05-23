@@ -12,67 +12,78 @@
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
     <div class="header">
         <a href="index.html"><img src="./img/Vector.png" class="logo"></a>
     </div>
-    <div class="container">
+    <div class="animate__animated animate__fadeInUp">
+      <div class="container">
         <div class="main_container">
           <div class="start-add-container">
-            <button type="button" id="startGame" onclick="game()">Iniciar Juego</button>
-            <button type="button" id="addWord" onclick='addWords()'>Agregar Nueva Palabra</button>
+            <button type="button" class="animate__animated animate__fadeInUp" id="startGame" onclick="game()">Iniciar Juego</button>
+            <button type="button" class="animate__animated animate__fadeInUp"  id="addWord" onclick="addWords()">Agregar Nueva Palabra</button>
           </div>
         </div>
+      </div>
     </div>
-    <div id="resultBox">
-      <textarea name="textBox"id="textBox"cols="10"rows="10"placeholder="Agregue la palabra"></textarea>
+    <div id="resultBox" class="animate__animated animate__fadeInUp">
+      <textarea name="textBox"id="textBox"cols="2"rows="2"placeholder="Agregue la palabra"></textarea>
+      <h5 id="textAdd"></h5>
       <div class="warning_container">
         <img src="./img/Vector-2.png" />
         <p class="input_warning">Máx. de 8 Letras.</p>
       </div>
-      <div id="notFound">
-        <h5> Exedió el limite de 8 letras</h5>
-      </div>
-      <button type="button" id="save" onclick="saveAndPlay()">Guardar y Empezar</button>
+    
+      <button type="button" id="save" >Guardar y Empezar</button>
       <button type="button" id="cancel" onclick="cancelAdd()">Cancelar</button>
     </div>
-    <div id="game">
-      <img id="imagen" src="img/img0.png" alt="Ahorcado">
-      <p id="palabra_a_adivinar">
-      </p>
+    <div id="game" class="animate__animated animate__fadeInUp">
+      <img id="imagen" src="img/img0.png" alt="Ahorcado"  >
+      <div id="palabra_a_adivinar">
+        <p id="palabra_a_adivinar">
+        </p>
+      </div>
+      
       <button type="button" class="newGame" onclick="game()">Nuevo Juego</button>
       <button type="button" class="exit" onclick="returnInicio()">Desistir</button>
       <p id="resultado"></p>
+      <br>
+      <br>
+      <p id="erroneas"></p>
       <div id="letras">
-        <button>a</button>
-        <button>b</button>
-        <button>c</button>
-        <button>d</button>
-        <button>e</button>
-        <button>f</button>
-        <button>g</button>
-        <button>h</button>
-        <button>i</button>
-        <button>j</button>
-        <button>k</button>
-        <button>l</button>
-        <button>ll</button>
-        <button>m</button>
-        <button>n</button>
-        <button>ñ</button>
-        <button>o</button>
-        <button>p</button>
-        <button>q</button>
-        <button>r</button>
-        <button>s</button>
-        <button>t</button>
-        <button>u</button>
-        <button>v</button>
-        <button>w</button>
-        <button>x</button>
-        <button>y</button>
-        <button>z</button>
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <button>D</button>
+        <button>E</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>I</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button>LL</button>
+        <button>M</button>
+        <button>N</button>
+        <button>Ñ</button>
+        <button>O</button>
+        <button>P</button>
+        <button>Q</button>
+        <button>R</button>
+        <button>S</button>
+        <button>T</button>
+        <button>U</button>
+        <button>V</button>
+        <button>W</button>
+        <button>X</button>
+        <button>Y</button>
+        <button>Z</button>
       </div>
     </div>
 
@@ -246,6 +257,8 @@
         </li>
       </ul>
     </footer>
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 </html>
