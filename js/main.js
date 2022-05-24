@@ -97,13 +97,6 @@ function click_letras(event){
     const letra = button.innerHTML.toUpperCase();
     const palabra = palabraOc.toUpperCase();
 
-    for(let i = 0; i < palabra.length; i++){
-        if( letra != palabra[i]){
-               id('erroneas').innerHTML = letra;
-            }
-        }
-
-
     let acerto = false;
 
     for(let i = 0; i < palabra.length; i++){
@@ -122,10 +115,41 @@ function click_letras(event){
 
     }
     if(errores == 7){
-        id('resultado').innerHTML = "Perdiste, la palabra correcta era: " + palabraOc;
+        //id('resultado').innerHTML = "Perdiste, la palabra correcta era: " + palabraOc;
+        Swal.fire({
+            title: '¡Perdiste!',
+            text: 'La palabra correcta era: '+palabraOc,
+            icon:'error',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+            
+          })
         game_over();
     }else if(aciertos == palabraOc.length){
-        id('resultado').innerHTML = "FELICIDADES!!, GANASTE!!";
+        Swal.fire({
+            title: '¡Felicidades!',
+            text: '¡Has adivinado la palabra oculta!',
+            icon: 'success',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+            
+          })
         game_over();
     }
     console.log("la letra " + letra + " en la palabra " + palabra + "existe? " + acerto);
@@ -152,11 +176,56 @@ const textAreaNuevaPalabra = document.getElementById('textBox');
 
 botonGuardar.addEventListener('click', ()  => {
     if(/^([0-9!¡()´¨:;,.""#$%&''*+/=?^_``{|}~-])*$/.test(textAreaNuevaPalabra.value) === true){
-        alert('Solo se admiten letras');
-    }else if(textAreaNuevaPalabra.value.length === 0){
-        alert('Debe ingresar una palabra');
+        Swal.fire({
+            title: '¡Error!',
+            text: '¡Solo se admiten letras!',
+            icon: 'error',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            } 
+            
+          })
+    }else if(textAreaNuevaPalabra.value.length == 0){
+        Swal.fire({
+            title: '¡Error!',
+            text: '¡Debe ingresar una palabra!',
+            icon: 'error',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            } 
+            
+          })
     }else if(textAreaNuevaPalabra.value.length >8){
-        alert('La palabra debe tener un máximo de 8 letras');
+        Swal.fire({
+            title: '¡Error!',
+            text: 'Solo están permitidas palabras de hasta 8 letras',
+            icon: 'error',
+            backdrop: true,
+            allowOutsideClick: true,
+            confirmButtonColor:'#0A3871',
+            showCloseButton: true,
+            showClass:{
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            } 
+            
+          })
     }else{
         palabras.push(textAreaNuevaPalabra.value.trim().toUpperCase());
         //alert('La palabra se agregó con éxito');
