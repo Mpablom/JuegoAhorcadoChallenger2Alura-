@@ -32,7 +32,7 @@
       </div>
     </div>
     <div id="resultBox" class="animate__animated animate__fadeInUp">
-      <textarea name="textBox"id="textBox"cols="2"rows="2"placeholder="Agregue la palabra"></textarea>
+      <textarea name="textBox"id="textBox" maxlength="8" cols="2"rows="2"placeholder="Agregue la palabra"></textarea>
       <h5 id="textAdd"></h5>
       <div class="warning_container">
         <img src="./img/Vector-2.png" />
@@ -47,14 +47,14 @@
       <div id="palabra_a_adivinar">
         <p id="palabra_a_adivinar">
         </p>
+        <p id="erroneas">
+
+        </p>
       </div>
       
       <button type="button" class="newGame" onclick="game()">Nuevo Juego</button>
       <button type="button" class="exit" onclick="returnInicio()">Desistir</button>
-      <p id="resultado"></p>
-      <br>
-      <br>
-      <p id="erroneas"></p>
+    
       <div id="letras">
         <button>A</button>
         <button>B</button>
@@ -258,6 +258,9 @@
       </ul>
     </footer>
     <script src="./js/main.js"></script>
+    <script src="./js/agregar_palabra.js"></script>
+    <script src="./js/game_over.js" ></script>
+    <script src="./js/click_letras.js" ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 </body>
