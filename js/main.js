@@ -1,17 +1,17 @@
-
 // Obtener año actual.
 const actualYear = new Date().getFullYear();
 // Asignar año actual al footer.
 document.getElementById("year").innerHTML = actualYear;
+/* Array*/
+var palabras = Array("GORDO", "PILOTO", "DECAER", "AVION", "MUCHOS", "CARAMELO", "MIELADA", "AZUCAR", "HIJO", "ECLOSION", "GATITO", "GERENTE", "BANQUETE", "ALARMA", "PALIDO", "CAMAS", "COMPLEJO");
 
-
-const play = document.getElementById('startGame');
-const imagen = id('imagen');
-const btn_letras = document.querySelectorAll("#letras button");
-//palabra oculta
-let palabraOc = "";
+let palabraOc;
 let errores = 0;
 let aciertos = 0;
+const play = id('startGame');
+const imagen = id('imagen');
+const btn_letras = document.querySelectorAll("#letras button");
+
 //Botón iniciar juego
 function game(){
     document.getElementById("startGame").style.display = 'none';
@@ -55,10 +55,9 @@ function id(str){
     return document.getElementById(str);
 }
 
-var palabras = Array("GORDO", "PILOTO", "DECAER", "AVION", "MUCHOS", "CARAMELO", "MIELADA", "AZUCAR", "HIJO", "ECLOSION", "GATITO", "GERENTE", "BANQUETE", "ALARMA", "PALIDO", "CAMAS", "COMPLEJO");
-
 
 function iniciar(event){
+    id('erroneas').innerHTML='';
     imagen.src = 'img/img0.png';
     errores = 0;
     aciertos = 0;
@@ -69,16 +68,17 @@ function iniciar(event){
     palabraOc=palabras[Math.floor(Math.random()*palabras.length)];
     console.log(palabraOc);
     const cant_letras = palabraOc.length;
+    const cant_palabras = palabras.length;
     
     for( let i = 0; i < btn_letras.length ; i++ ){
-        btn_letras[i].disabled = false;   
+        btn_letras[i].disabled = false;
     }
 
     for( let i = 0; i < cant_letras; i++ ){
         const span = document.createElement( 'span' );
         parrafo.appendChild(span);
     }
-
+ 
 
 }
 

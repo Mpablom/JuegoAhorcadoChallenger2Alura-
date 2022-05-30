@@ -5,3 +5,4 @@ function game_over(){
         
     }
 }
+game_over();
