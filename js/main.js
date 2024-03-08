@@ -10,37 +10,37 @@ let errores = 0;
 let aciertos = 0;
 const play = id('startGame');
 const imagen = id('imagen');
-const btn_letras = document.querySelectorAll("#letras button");
+const btn_letras = document.querySelectorAll('.lett');
 
 //Botón iniciar juego
 function game(){
     document.getElementById("startGame").style.display = 'none';
     document.getElementById("addWord").style.display = 'none';
     document.getElementById("resultBox").style.display = 'none';
-    document.getElementById("game").style.display = 'block';
+    document.getElementById("game").style.display = 'flex';
     iniciar();
 }
-//Botón agregar palabra
+
 function addWords(){
     document.getElementById("startGame").style.display = 'none';
     document.getElementById("addWord").style.display = 'none';
-    document.getElementById("resultBox").style.display = 'block';
+    document.getElementById("resultBox").style.display = 'flex';
      
 }
-//Botón guardar y empezar
+
 function saveAndPlay(){
     document.getElementById("startGame").style.display = 'none';
     document.getElementById("addWord").style.display = 'none';
     document.getElementById("resultBox").style.display = 'none';
     document.getElementById("game").style.display = 'block';
 }
-//Botón cancelar
+
 function cancelAdd(){
    document.getElementById("resultBox").style.display = 'none';
    document.getElementById("addWord").style.display = 'block';
    document.getElementById("startGame").style.display = 'block';
 }
-//Botón nuevo juego 
+
 function playAgain(){
 
 }
@@ -66,7 +66,6 @@ function iniciar(event){
     parrafo.innerHTML = '';
 
     palabraOc=palabras[Math.floor(Math.random()*palabras.length)];
-    console.log(palabraOc);
     const cant_letras = palabraOc.length;
     const cant_palabras = palabras.length;
     

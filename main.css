@@ -7,37 +7,43 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html,
-body {
+html{
     font-family: 'Inter';
     font-weight: 400;
+    min-height: 100%;
 }
 
 body {
-    padding: 40px 40px 0 40px;
-    background: #F3F5FC;
+    background: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 .header {
     display: flex;
+    padding: 1%;
 }
 
-.header img {
+/* .header img {
     margin-right: 280px;
-}
+} */
 
-.footer_hr {
-    max-width: 1400px;
-    margin: 15px auto 0;
-    border-radius: 50%;
+main{
+    flex: 1 0 auto;
 }
 
 footer {
+    flex-shrink: 0;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 15px auto 0;
-    color: #7a7e81;
+    margin-top: auto;
+    color: black;
     font-size: 16px;
+    padding-top: .5%;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .links {
@@ -75,6 +81,8 @@ footer {
     background-clip: content-box;
 }
 .container{
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: auto;
     margin: auto;
@@ -82,6 +90,8 @@ footer {
 .main_container{
     margin-top: 25px;
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .start-add-container{
     display:flex;
@@ -91,6 +101,7 @@ footer {
     gap: 30px;
     margin-top: 15px;
     margin-bottom: 30px;
+    justify-content: center;
 }
 button {
     padding-top: 21px;
@@ -103,30 +114,46 @@ button {
     cursor: pointer;
     margin: 6px;
 }
+         
 #startGame{
-    color: #FFF;
-    background: #0A3871;
-    transition: 0.5s background;
-    transition: 0.1s box-shadow;
-    padding: 40px;
-    margin-left: auto;
-    margin-left: auto;
-}
-#startGame:hover{
-    background: #0a3871f1;
-    box-shadow: 0 0 5px 1px #0a3871e1;
-}
-#addWord{
-    color: #0A3871;
-    background: #fff !important;
-    transition: 0.1s box-shadow;
-    margin-left: auto;
-    margin-left: auto;
-}
-#addWord:hover{
-    box-shadow: 0 0 5px 1px #0A3871;
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
 }
 
+#startGame:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+         
+#addWord{
+    background-image: linear-gradient(to right, #000000 0%, #0f9b0f  51%, #000000  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
+}
+
+#addWord:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+}
 #notFound{
     display: none;
 }
@@ -164,53 +191,91 @@ button {
     gap: 10px;
 }
 #save{
-    color: #FFF;
-    background: #0A3871;
-    transition: 0.5s background;
-    transition: 0.1s box-shadow;
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
 }
-#save:hover{
-    background: #0a3871f1;
-    box-shadow: 0 0 5px 1px #0a3871e1;
-   
+
+#save:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
-#cancel{
-    color: #0A3871;
-    background: #fff !important;
-    transition: 0.1s box-shadow;
+
+#cancel {
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
 }
-#cancel:hover{
-    box-shadow: 0 0 5px 1px #0A3871;
+
+#cancel:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
+         
 #game{
     display: none;
     align-content: center;
     align-items: center;
-    margin-left: 200px;
+    flex-direction: column;
     
 }
 .newGame{
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+    margin: 10px;
+    padding: 15px 45px;
     text-align: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    color: #FFF;
-    background: #0A3871;
-    transition: 0.5s background;
-    transition: 0.1s box-shadow;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
 }
-.newGame:hover{
-    background: #0a3871f1;
-    box-shadow: 0 0 5px 1px #0a3871e1;
+
+.newGame:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
-.exit{
-    max-width: auto;
-    color: #0A3871;
-    background: #fff !important;
-    transition: 0.1s box-shadow;
+.exit {
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: block;
 }
-.exit:hover{
-    box-shadow: 0 0 5px 1px #0A3871;
+
+.exit:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
+
 #palabra_a_adivinar{
     
     display: flex;
@@ -245,14 +310,18 @@ button {
     margin-right: 6px;
     display: inline-block;/* sin esto, por ser un elemto de linia, no tomaria el width*/
 }
-#letras{
+#letras {
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
+    height: 100px;
+    width: 35%;
 }
-#letras button{
+
+#letras button {
     width: 28px;
+    height: 50%; 
     padding: 6px 0;
     text-align: center;
 }
@@ -338,7 +407,7 @@ button {
     }
 
     body {
-        padding: 10px;
+        min-height: 100vh;
     }
 
     .container {
@@ -347,7 +416,7 @@ button {
     }
 
     .main_container {
-        width: 310px;
+        width: 100%;
         align-items: center;
     }
 
@@ -360,10 +429,22 @@ button {
     #textBox {
         font-size: 20px;
         line-height: 28px;
+        width: 100%;
+        margin-bottom: 5%;
     }
 
     #results {
         font-size: 18px;
         line-height: 28px;
+    }
+
+    #letras{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+        height: 100%;
+        width: 100%;
     }
 }

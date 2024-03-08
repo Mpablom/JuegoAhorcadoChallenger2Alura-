@@ -1,13 +1,22 @@
 
-//click de adivinar letra
-for( let i = 0; i < btn_letras.length ; i++ ){
-    btn_letras[i].addEventListener( 'click', click_letras );
-    
+for (let i = 0; i < btn_letras.length; i++) {
+    btn_letras[i].addEventListener('click', click_letras);
 }
+
+document.addEventListener('keydown', function(event) {
+    const keyPressed = event.key.toUpperCase(); 
+    for (let i = 0; i < btn_letras.length; i++) {
+        const buttonText = btn_letras[i].innerText.toUpperCase(); 
+        if (keyPressed === buttonText) {
+            click_letras({ target: btn_letras[i] });
+        }
+    }
+});
+
 
 function click_letras(event){
     const spans = document.querySelectorAll('#palabra_a_adivinar span');
-    const button = event.target; //cuál de las letras, llamó a la función.
+    const button = event.target;
     button.disabled = true;
 
     const letra = button.innerHTML.toUpperCase();
@@ -66,6 +75,4 @@ function click_letras(event){
           })
         game_over();
     }
-    console.log("la letra " + letra + " en la palabra " + palabra + "existe? " + acerto);
-
 }
